@@ -11,14 +11,12 @@ require("dotenv").config();
 // Constants
 const PORT = 8080;
 const HOST = "0.0.0.0";
-const mongodb_url = "mongodb://localhost:27017";
 const dbName = "dedupe";
 
-MongoClient.connect(mongodb_url, (err, client) => {
+MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
   // App
-  const db = client.db("dedupe");
+  const db = client.db("dbName");
   const app = express();
-  console.log(process.env.MONGODB_URL);
   app.use(bodyParser.json({ limit: "1mb" }));
 
   app.get("/", (req, res) => {
