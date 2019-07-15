@@ -15,6 +15,7 @@ const dbName = "dedupe";
 
 MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
   // App
+  if (err) console.error(err);
   const db = client.db("dbName");
   const app = express();
   app.use(bodyParser.json({ limit: "1mb" }));
