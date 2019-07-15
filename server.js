@@ -9,17 +9,19 @@ const dao = require("./dao");
 require("dotenv").config();
 
 // Constants
+const PORT = 8080;
+const HOST = "0.0.0.0";
 const dbName = "dedupe";
-console.log(process.env.MONGODB_URL);
 
 MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
   // App
   if (err) console.error(err);
-  const db = client.db(dbName);
+  const db = client.db("dbName");
   const app = express();
   app.use(bodyParser.json({ limit: "1mb" }));
 
   app.get("/", (req, res) => {
+    console.log(mongoDb);
     res.send(
       dao.getLists({
         db
