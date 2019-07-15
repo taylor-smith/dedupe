@@ -1,0 +1,23 @@
+{
+  "name": "dedupe",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.14",
+    "lodash.flatten": "^4.4.0",
+    "lodash.intersection": "^4.4.0",
+    "lodash.intersectionby": "^4.7.0",
+    "lodash.uniq": "^4.5.0",
+    "mongodb": "^3.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
