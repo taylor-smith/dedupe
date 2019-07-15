@@ -10,9 +10,9 @@ require("dotenv").config();
 
 // Constants
 const dbName = "dedupe";
+console.log(process.env.MONGODB_URL);
 
 MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
-  console.log(process.env.MONGODB_URL);
   // App
   if (err) console.error(err);
   const db = client.db(dbName);
