@@ -12,7 +12,7 @@ require("dotenv").config();
 const dbName = "dedupe";
 
 MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
-  console.log(client);
+  console.log(process.env.MONGODB_URL);
   // App
   if (err) console.error(err);
   const db = client.db(dbName);
@@ -20,7 +20,6 @@ MongoClient.connect(process.env.MONGODB_URL, (err, client) => {
   app.use(bodyParser.json({ limit: "1mb" }));
 
   app.get("/", (req, res) => {
-    console.log(mongoDb);
     res.send(
       dao.getLists({
         db
